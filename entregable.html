@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculadora</title>
+</head>
+<body>
+    <script>
+        const realizarOperaciones = (numero1,numero2,operacion)=>{
+            if(operacion == "suma"){
+                return (numero1+numero2);
+            }
+            else if(operacion == "resta"){
+                return (numero1-numero2);
+            }
+             else if(operacion == "multiplicacion"){
+                return (numero1*numero2);
+            }   
+            else if(operacion == "division"){
+                if(numero2 == 0){
+                    return "No es posible realizar una division por cero";
+                }else return (numero1/numero2)
+            }
+            else return "Esta operacion no es valida"
+        }
+        let numero1,numero2,operacion;
+        let pregunta;
+
+        while(pregunta != "salir"){
+            numero1 = prompt("\nIngrese el primer numero \n");
+            numero2 = prompt("\nIngrese el segundo numero \n");
+
+            operacion = prompt("\nIngrese la operacion a realizar (suma, resta, multiplicacion, division) \n");
+
+            console.log("El resultado es: ")
+            console.log(realizarOperaciones(+numero1,+numero2,operacion));
+
+            pregunta = prompt("\n\nDesea realizar otra operacion? \n")
+
+            if (pregunta == "si"){
+                continue;
+            }else{
+                console.log("Gracias por usar la calculadora ! Adios!!\n");
+                break
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
